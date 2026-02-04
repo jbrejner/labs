@@ -8,6 +8,6 @@ trail:
     - name: docker-image
       attestations:
         - name: sbom
-          required: true
+          required: generic
         - name: performance-test  # We haven't implemented this yet!
-          required: true
+          required: generic
