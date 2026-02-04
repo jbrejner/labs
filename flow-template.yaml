@@ -9,5 +9,3 @@ trail:
       attestations:
         - name: sbom
           type: generic
-        - name: performance-test  # We haven't implemented this yet!
-          type: generic
