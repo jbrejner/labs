@@ -241,6 +241,12 @@ jobs:
 
     - name: Update Kosli policy
       run: kosli create policy labs-prod-requirements .kosli-policy.yml
+
+    - name: Check if an artifact is compliant before deployment
+      run: |
+        kosli assert artifact ghcr.io/${IMAGE}:latest \
+        --environment labs-prod \
+        --fingerprint $(kosli fingerprint docker ghcr.io/${IMAGE}:latest)
     
     - name: Attach policy to environment
       run: kosli attach-policy labs-prod-requirements --environment labs-prod
